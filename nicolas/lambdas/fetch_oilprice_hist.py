@@ -24,12 +24,13 @@ def lambda_handler(event, context):
 
     # Fetch data from Yahoo Finance API
     hist = brent.history(period="max")
+    print(hist.tail())
 
     # Remove columns 'Dividends' and 'Stock Splits'
     hist.drop(['Dividends', 'Stock Splits'], inplace=True, axis=1)
 
     # Remove last row
-    hist.drop(hist.tail(1).index, inplace=True)
+    hist.drop(hist.tail(3).index, inplace=True)
 
     # Put the date index as column and convert it to date format
     hist = hist.reset_index(level=0)

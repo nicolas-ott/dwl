@@ -36,10 +36,10 @@ def fetchUrlList():
     package_dict = package_dict['result']   # we only need the 'result' part from the dictionary
 
     # Get the relevant metadata for the data from the dictionary
-    df_sources = pd.DataFrame({'year':[],'filename':[],'package_id': [], 'url': [],'uri': [],'format': []})
+    df_sources = pd.DataFrame({'year':[],'filename':[], 'url': [],'format': []})
 
     for ele in package_dict['resources']:
-        to_append = [ele['url'][-8:-4],ele['url'][-25:-4],ele['package_id'], ele['url'],ele['uri'],ele['format']]
+        to_append = [ele['url'][-8:-4],ele['url'][-25:-4], ele['url'],ele['format']]
         df_sources.loc[len(df_sources)] = to_append
     
     df_sources =  df_sources[df_sources['format']=="CSV"] #only keep csv files in the dataframe
@@ -50,7 +50,7 @@ def fetchUrlList():
     
     # attempt the connection to postgres
     try:
-        pg_hook = PostgresHook(postgres_conn_id="trunks", schema="Trunks")
+        pg_hook = PostgresHook(postgres_conn_id="trunks", schema="trunks")
         dbconnect = pg_hook.get_conn()
 
     except Exception as error:
@@ -70,7 +70,7 @@ def fetchUrlList():
     dbconnect = db.connect()
 
     # write df to database
-    df_sources.to_sql('weather_zuerich_daily_urls', con= dbconnect, if_exists='replace',
+    df_sources.to_sql('weather_daily_urls', con= dbconnect, if_exists='replace',
           index=False)
     dbconnect = pg.connect(conn_string)
     dbconnect.autocommit = True
@@ -108,7 +108,7 @@ def fetchAllCsv():
 
     # attempt the connection to postgres
     try:
-        pg_hook = PostgresHook(postgres_conn_id="trunks", schema="Trunks")
+        pg_hook = PostgresHook(postgres_conn_id="trunks", schema="trunks")
         dbconnect = pg_hook.get_conn()
 
     except Exception as error:
@@ -128,7 +128,7 @@ def fetchAllCsv():
     dbconnect = db.connect()
 
     # write df to db
-    df.to_sql('weather_zuerich_daily', con= dbconnect, if_exists='replace',
+    df.to_sql('weather_daily', con= dbconnect, if_exists='replace',
           index=False)
     dbconnect = pg.connect(conn_string
                         )
@@ -138,7 +138,7 @@ def fetchAllCsv():
 
 
 dag = DAG(
-        'weather_zuerich_daily',
+        'weather_daily',
         schedule_interval='@daily',
         start_date=datetime.datetime.now() - datetime.timedelta(days=1))
 

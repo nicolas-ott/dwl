@@ -61,7 +61,10 @@ def lambda_handler(event, context):
     last_date = str(cursor.fetchone()[0] + timedelta(days=1))
 
     # Get oil price data dynamically
-    data = yf.download("BZ=F", start=last_date, end=str(date.today()))
+    data = yf.download("BZ=F", start=last_date, end=str(date.today()-timedelta(days=2)))
+    print(last_date)
+    print(str(date.today()-timedelta(days=2)))
+    print(data)
 
     # Remove column 'Close'
     data.drop(['Close'], inplace=True, axis=1)

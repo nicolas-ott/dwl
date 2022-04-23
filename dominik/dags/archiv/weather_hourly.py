@@ -50,7 +50,7 @@ def fetchUrlList():
     
     # attempt the connection to postgres
     try:
-        pg_hook = PostgresHook(postgres_conn_id="trunks", schema="Trunks")
+        pg_hook = PostgresHook(postgres_conn_id="trunks", schema="trunks")
         dbconnect = pg_hook.get_conn()
 
     except Exception as error:
@@ -70,7 +70,7 @@ def fetchUrlList():
     dbconnect = db.connect()
 
     # write df to database
-    df_sources.to_sql('weather_zuerich_hourly_urls', con= dbconnect, if_exists='replace',
+    df_sources.to_sql('weather_hourly_urls', con= dbconnect, if_exists='replace',
           index=False)
     dbconnect = pg.connect(conn_string)
     dbconnect.autocommit = True
@@ -108,7 +108,7 @@ def fetchAllCsv():
 
     # attempt the connection to postgres
     try:
-        pg_hook = PostgresHook(postgres_conn_id="trunks", schema="Trunks")
+        pg_hook = PostgresHook(postgres_conn_id="trunks", schema="trunks")
         dbconnect = pg_hook.get_conn()
 
     except Exception as error:
@@ -128,7 +128,7 @@ def fetchAllCsv():
     dbconnect = db.connect()
 
     # write df to db
-    df.to_sql('weather_zuerich_hourly', con= dbconnect, if_exists='replace',
+    df.to_sql('weather_hourly', con= dbconnect, if_exists='replace',
           index=False)
     dbconnect = pg.connect(conn_string
                         )
@@ -138,7 +138,7 @@ def fetchAllCsv():
 
 
 dag = DAG(
-        'weather_zuerich_hourly',
+        'weather_hourly',
         schedule_interval='@daily',
         start_date=datetime.datetime.now() - datetime.timedelta(days=1))
 
