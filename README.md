@@ -96,7 +96,7 @@ The repository has the following file structure:
     - [ ] [lambdas](https://github.com/nicolas-ott/dwl/tree/main/nicolas/Lambdas)
 - [ ] [images](https://github.com/nicolas-ott/dwl/tree/main/images)
 
-The data folder contains a csv file with the schedule of vacations and school-free days in the city of Zurich. This data was stored manually in an S3 bucket and helps to check for temporal effects on motorized individual Transport in the city of Zurich. Each author engaged with another ETL process and created two folders. The 'Jupyter'-folders contain several jupyter notebooks. These notebooks acted as level playing field before putting the code into production via Amazon lambda functions or Apache Airflow dags. The 'dags' respectively 'lambda' folders contain the actual code which was deployed using the mentioned services. The image folder contains a nice traffic image. :D
+The data folder contains a csv file with the schedule of vacations and school-free days in the city of Zurich. This data was stored manually in an S3 bucket and helps to check for temporal effects on motorized individual transport in the city of Zurich. Each author dealt with another ETL process and created two folders for it: The 'Jupyter'-folders contain several jupyter notebooks. These notebooks were used for data analysis and as a general playground before the code was pushed into production via Amazon Lambda functions or Apache Airflow dags. The 'dags' respectively 'lambda' folders contain the actual code which was deployed using the mentioned services. The image folder contains a nice traffic image. :D
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
