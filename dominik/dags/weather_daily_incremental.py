@@ -121,16 +121,6 @@ def fetchWeatherData():
     """
 
     print('Starting process')
-    # # Make the HTTP request
-    # response = requests.get(packages)
-    #
-    # # Use the json module to load CKAN's response into a dictionary
-    # response_dict = json.loads(response.content)
-    #
-    # # Check the contents of the response
-    # assert response_dict['success'] is True  # make sure if response is OK
-    # result = response_dict['result']  # extract all the packages from the response
-    # pprint.pprint(result)  # pretty print the list to the screen
 
 
     # DB table names
