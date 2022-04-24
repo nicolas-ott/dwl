@@ -7,7 +7,8 @@
 
 <!-- PROJECT SHIELDS -->
 [![Contributors][contributors-shield]][contributors-url]
-
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
 
 
 <!-- PROJECT LOGO -->
@@ -126,3 +127,7 @@ To be able to run the code the credentials for the different databases and other
 [contributors-shield]: https://img.shields.io/github/contributors/nicolas-ott/dwl.svg?style=for-the-badge
 [contributors-shield]: https://img.shields.io/github/contributors/nicolas-ott/dwl.svg?style=for-the-badge
 [contributors-url]: https://github.com/nicolas-ott/dwl/graphs/contributors
+[stars-shield]: https://img.shields.io/github/stars/nicolas-ott/dwl.svg?style=for-the-badge
+[stars-url]: https://github.com/nicolas-ott/dwl/stargazers
+[issues-shield]: https://img.shields.io/github/issues/nicolas-ott/dwl.svg?style=for-the-badge
+[issues-url]: https://github.com/nicolas-ott/dwl/issues
