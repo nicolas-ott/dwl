@@ -84,17 +84,17 @@ The goal of this project is to set up functioning ETL processes using Amazon and
 
 The repository has the following file structure:
 
-- [ ] [data](https://github.com/nicolas-ott/dwl/data)
-- [ ] [dominik](https://github.com/nicolas-ott/dwl/dominik)
-    - [ ] [dags](https://github.com/nicolas-ott/dwl/dominik/dags)
-    - [ ] [jupyter](https://github.com/nicolas-ott/dwl/dominik/Jupyter)
-- [ ] [lars](https://github.com/nicolas-ott/dwl/lars)
-    - [ ] [jupyter](https://github.com/nicolas-ott/dwl/lars/Jupyter)
-    - [ ] [lambdas](https://github.com/nicolas-ott/dwl/lars/Lambdas)
-- [ ] [nicolas](https://github.com/nicolas-ott/dwl/nicolas)
-    - [ ] [jupyter](https://github.com/nicolas-ott/dwl/nicolas/Jupyter)
-    - [ ] [lambdas](https://github.com/nicolas-ott/dwl/nicolas/Lambdas)
-- [ ] [images](https://github.com/nicolas-ott/dwl/images)
+- [ ] [data](https://github.com/nicolas-ott/dwl/tree/main/data)
+- [ ] [dominik](https://github.com/nicolas-ott/dwl/tree/main/dominik)
+    - [ ] [dags](https://github.com/nicolas-ott/dwl/tree/main/dominik/dags)
+    - [ ] [jupyter](https://github.com/nicolas-ott/dwl/tree/main/dominik/Jupyter)
+- [ ] [lars](https://github.com/nicolas-ott/dwl/tree/main/lars)
+    - [ ] [jupyter](https://github.com/nicolas-ott/dwl/tree/main/lars/Jupyter)
+    - [ ] [lambdas](https://github.com/nicolas-ott/dwl/tree/main/lars/Lambdas)
+- [ ] [nicolas](https://github.com/nicolas-ott/dwl/tree/main/nicolas)
+    - [ ] [jupyter](https://github.com/nicolas-ott/dwl/tree/main/nicolas/Jupyter)
+    - [ ] [lambdas](https://github.com/nicolas-ott/dwl/tree/main/nicolas/Lambdas)
+- [ ] [images](https://github.com/nicolas-ott/dwl/tree/main/images)
 
 The data folder contains a csv file with the schedule of vacations and school-free days in the city of Zurich. This data was stored manually in an S3 bucket and helps to check for temporal effects on motorized individual Transport in the city of Zurich. Each author engaged with another ETL process and created two folders. The 'Jupyter'-folders contain several jupyter notebooks. These notebooks acted as level playing field before putting the code into production via Amazon lambda functions or Apache Airflow dags. The 'dags' respectively 'lambda' folders contain the actual code which was deployed using the mentioned services. The image folder contains a nice traffic image. :D
 
